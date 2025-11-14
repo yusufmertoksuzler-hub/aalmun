@@ -1,1 +1,76 @@
-<a>aaaa<a>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AAL MUN</title>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* bounce/overscroll engelle */
+        overscroll-behavior: none;
+        background-color: rgb(26,25,23);
+        -webkit-overflow-scrolling: touch;
+    }
+
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    /* Ana içerik alanı (şu an boş, Tally kaldırıldı) */
+    .content {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Alt overlay */
+    .tally-overlay {
+        position: fixed; /* hep görünür altta */
+        bottom: 0;
+        width: 100%;
+        height: 50px;
+        background-color: rgb(26,25,23);
+        color: white;
+        font-size: 18px;
+        font-family: sans-serif;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: pointer;
+        z-index: 9999;
+    }
+
+    .tally-overlay::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: rgba(255,255,255,0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+</head>
+<body>
+    <!-- Ana içerik boş -->
+    <div class="content"></div>
+
+    <!-- Alt overlay -->
+    <div class="tally-overlay" onclick="window.open('https://www.instagram.com/aalmodelunclub/', '_blank')">
+        20-21 November
+    </div>
+
+    <script>
+        // iOS rubber-band / bounce scroll engelle
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    </script>
+</body>
+</html>
